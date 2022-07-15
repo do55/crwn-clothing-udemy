@@ -30,12 +30,7 @@ const SignInForm = () => {
         email,
         password
       );
-      if (user.uid) {
-        console.log("Hello");
-        // <Route index element={<Home />} />
-      }
 
-      //if(user.uid) route to home
       resetFormFields();
     } catch (error) {
       resetFormFields();
@@ -56,8 +51,7 @@ const SignInForm = () => {
   };
 
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
   };
 
   return (
